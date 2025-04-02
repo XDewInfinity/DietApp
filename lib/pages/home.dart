@@ -1,6 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:dietapp/server/config.dart';
+
 
 class PieChartSample1 extends StatefulWidget {
   const PieChartSample1({super.key});
@@ -102,6 +104,7 @@ class PieChartSample1State extends State {
                   centerSpaceRadius: 60,
                   sections: showingSections(),
                 ),
+              duration: Duration(milliseconds: 120),
               ),
             ),
           ),

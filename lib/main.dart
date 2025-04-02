@@ -2,28 +2,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/inh.dart';
+import 'package:dietapp/pages/utils/qr.dart';
 
-/// Flutter code sample for [BottomNavigationBar].
 
-void main() => runApp(const BottomNavigationBarExampleApp());
+void main() => runApp(const DietApp());
 
-class BottomNavigationBarExampleApp extends StatelessWidget {
-  const BottomNavigationBarExampleApp({super.key});
+class DietApp extends StatelessWidget {
+  const DietApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BottomNavigationBarExample());
+    return const MaterialApp(
+      home: NavigationBar(), 
+    );
   }
 }
 
-class BottomNavigationBarExample extends StatefulWidget {
-  const BottomNavigationBarExample({super.key});
+class NavigationBar extends StatefulWidget {
+  const NavigationBar({super.key});
 
   @override
-  State<BottomNavigationBarExample> createState() => _BottomNavigationBarExampleState();
+  State<NavigationBar> createState() => _NavigationBarState();
 }
 
-class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample> {
+class _NavigationBarState extends State<NavigationBar> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
@@ -31,7 +33,8 @@ class _BottomNavigationBarExampleState extends State<BottomNavigationBarExample>
     BarChartSample5(),
     Text('Химсостав', style: optionStyle),
     Text('Отчёты', style: optionStyle),
-    Text('Чеки', style: optionStyle),
+    QR(),
+    // Text('Чеки', style: optionStyle),
     Text('Профиль', style: optionStyle),
     Text('Динамика ИЗП', style: optionStyle),
     Text('Динамика БЖУ', style: optionStyle),
